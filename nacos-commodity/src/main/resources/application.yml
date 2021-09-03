@@ -1,0 +1,11 @@
+server:
+  port: 8062
+  servlet:
+    context-path: /comm
+spring:
+  application:
+    name: nacos-commodity1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848

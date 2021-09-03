@@ -1,0 +1,22 @@
+server:
+  port: 8071
+  servlet:
+    context-path: /order
+spring:
+  application:
+    name: nacos-order1
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    sentinel:   #配置Sentinel
+      transport:
+        port: 9998  #通信端口，只要保证这个端口没被占用即可
+        dashboard: localhost:8080   #指定控制台地址，用于连接访问
+nacos-user1: #调用的提供者的服务名称（也叫服务ID），可以看看nacos上注册的叫什么名
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+nacos-commodity1:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+
