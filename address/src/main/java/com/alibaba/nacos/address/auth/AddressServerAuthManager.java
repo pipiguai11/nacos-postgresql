@@ -34,6 +34,7 @@ public class AddressServerAuthManager implements AuthManager {
     public User login(Object request) throws AccessException {
         User result = new User();
         result.setUserName("nacos");
+
         return result;
     }
     
